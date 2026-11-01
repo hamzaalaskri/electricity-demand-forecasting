@@ -9,6 +9,8 @@
 ![Docker](https://img.shields.io/badge/Docker-verified-2496ED?logo=docker&logoColor=white)
 ![Tests](https://img.shields.io/badge/tests-79%20passing-brightgreen)
 
+**Author:** Hamza Alaskri
+
 The service forecasts electricity demand for each of the next **24 hours**. Its inputs are the last 30 days of hourly load, the calendar (including public holidays), and the temperature forecast for the four main load centres. It trains one gradient-boosted model per horizon.
 
 On a held-out test set covering **2.5 years** (2016–2018), which the model never saw during training, tuning, or selection, it achieves the following. The temperature forecasts here carry **realistic forecast error**, not the observed temperatures:
@@ -493,3 +495,9 @@ CI (`.github/workflows/ci.yml`) installs `requirements-dev.txt` on Ubuntu with P
 ## Data source
 
 PJM hourly load comes from the public Kaggle dataset [*Hourly Energy Consumption*](https://www.kaggle.com/datasets/robikscube/hourly-energy-consumption), originally published by PJM Interconnection. Temperature comes from [Open-Meteo](https://open-meteo.com/) (ERA5, CC BY 4.0). Check each source's terms before redistributing the raw files.
+
+---
+
+## Author
+
+**Hamza Alaskri**

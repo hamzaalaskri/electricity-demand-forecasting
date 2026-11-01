@@ -1,0 +1,55 @@
+{
+  "period": {
+    "start": "2016-02-10",
+    "end": "2018-08-02"
+  },
+  "days": 905,
+  "days_forecast": 902,
+  "days_blocked_by_quality": 3,
+  "live_mae": 1017.1520445194349,
+  "live_baseline_mae": 2205.3028455284552,
+  "live_improvement_over_baseline": 0.5387699033800071,
+  "reference_skill_ratio": 0.4445296032653421,
+  "faults_injected": true,
+  "counts": {
+    "drift_alert": 21,
+    "performance_alert": 6,
+    "candidate_rejected": 3,
+    "data_quality_block": 3,
+    "promoted": 2,
+    "deployment_confirmed": 2,
+    "manual_deploy_injected": 1,
+    "rollback": 1
+  },
+  "versions": [
+    {
+      "version": 1,
+      "source": "training pipeline",
+      "trained_through": "2016-02-08 22:00:00",
+      "deployed": "2016-02-09",
+      "registry_version": "1"
+    },
+    {
+      "version": 2,
+      "source": "retrain (schedule)",
+      "trained_through": "2017-01-05 23:00:00",
+      "deployed": "2017-02-03",
+      "registry_version": "2"
+    },
+    {
+      "version": 3,
+      "source": "manual hotfix (INJECTED FAULT)",
+      "trained_through": "2017-09-04 23:00:00",
+      "deployed": "2017-09-05",
+      "registry_version": "3"
+    },
+    {
+      "version": 4,
+      "source": "retrain (performance alert)",
+      "trained_through": "2018-03-01 23:00:00",
+      "deployed": "2018-03-30",
+      "registry_version": "4"
+    }
+  ],
+  "final_champion": 4
+}

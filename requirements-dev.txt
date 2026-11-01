@@ -1,0 +1,12 @@
+# Training, tuning, analysis, and testing. Install with: pip install -r requirements-dev.txt
+-r requirements.txt
+mlflow==3.16.0
+lightgbm==4.7.0
+xgboost==3.4.1
+scikit-learn==1.9.1
+optuna==5.0.0
+matplotlib==3.11.1
+seaborn==0.13.2
+statsmodels==0.15.0
+pytest==9.2.0
+httpx==0.28.1

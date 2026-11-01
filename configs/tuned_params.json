@@ -1,0 +1,42 @@
+{
+  "protocol": "fit on train 'fit' part; early-stop and score on the two halves of the training tail; objective = mean MAE at horizons 1, 12, 24",
+  "horizons": [
+    1,
+    12,
+    24
+  ],
+  "LightGBM": {
+    "params": {
+      "learning_rate": 0.028084335154750686,
+      "num_leaves": 44,
+      "min_child_samples": 30,
+      "subsample": 0.6943531336536197,
+      "colsample_bytree": 0.9301991904424537,
+      "reg_alpha": 0.0018550265803157552,
+      "reg_lambda": 0.012465180787301786
+    },
+    "objective_mae": 622.8473731347614,
+    "default_objective_mae": 626.6500913216132,
+    "improvement_over_default": 0.006068327826828979,
+    "trials_completed": 13,
+    "trials_pruned": 12,
+    "seconds": 874
+  },
+  "XGBoost": {
+    "params": {
+      "learning_rate": 0.02098373882817468,
+      "max_depth": 7,
+      "min_child_weight": 1.2616409539906484,
+      "subsample": 0.6453250038864868,
+      "colsample_bytree": 0.967745625139386,
+      "reg_alpha": 0.0063393505762583706,
+      "reg_lambda": 0.6318798756828683
+    },
+    "objective_mae": 619.5897684761268,
+    "default_objective_mae": 631.2027095758677,
+    "improvement_over_default": 0.018398116680367504,
+    "trials_completed": 16,
+    "trials_pruned": 9,
+    "seconds": 639
+  }
+}

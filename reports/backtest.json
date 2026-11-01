@@ -1,0 +1,78 @@
+{
+  "family": "LightGBM",
+  "baseline": "Seasonal naive (24h)",
+  "temperature": "simulated forecast error (see src/modeling.with_forecast_error)",
+  "folds": [
+    {
+      "year": 2014,
+      "test_start": "2014-01-01 00:00:00",
+      "test_end": "2014-12-31 23:00:00",
+      "train_rows": 104423,
+      "test_rows": 8760,
+      "mae": 937.6967435527558,
+      "rmse": 1259.2954529204774,
+      "mape": 2.9299673901660843,
+      "mae_observed_temperature": 777.3693685874205,
+      "baseline_mae": 2348.940434741248,
+      "improvement_over_baseline": 0.6008001183495104
+    },
+    {
+      "year": 2015,
+      "test_start": "2015-01-01 00:00:00",
+      "test_end": "2015-12-31 23:00:00",
+      "train_rows": 113183,
+      "test_rows": 8760,
+      "mae": 1040.089410433694,
+      "rmse": 1392.5241318934604,
+      "mape": 3.233330752786792,
+      "mae_observed_temperature": 857.6027880999653,
+      "baseline_mae": 2188.089959094368,
+      "improvement_over_baseline": 0.5246587526665594
+    },
+    {
+      "year": 2016,
+      "test_start": "2016-01-01 00:00:00",
+      "test_end": "2016-12-31 23:00:00",
+      "train_rows": 121943,
+      "test_rows": 8784,
+      "mae": 1018.9532295129508,
+      "rmse": 1370.3315118251019,
+      "mape": 3.18356851246304,
+      "mae_observed_temperature": 826.0575711517731,
+      "baseline_mae": 2088.131095362781,
+      "improvement_over_baseline": 0.5120262172352147
+    },
+    {
+      "year": 2017,
+      "test_start": "2017-01-01 00:00:00",
+      "test_end": "2017-12-31 23:00:00",
+      "train_rows": 130727,
+      "test_rows": 8760,
+      "mae": 992.409103728834,
+      "rmse": 1339.545923092585,
+      "mape": 3.1648784068548004,
+      "mae_observed_temperature": 815.1905391389145,
+      "baseline_mae": 2162.900304414003,
+      "improvement_over_baseline": 0.5411674307393893
+    },
+    {
+      "year": 2018,
+      "test_start": "2018-01-01 00:00:00",
+      "test_end": "2018-08-02 00:00:00",
+      "train_rows": 139487,
+      "test_rows": 5113,
+      "mae": 1105.0417910138274,
+      "rmse": 1463.4463188921043,
+      "mape": 3.418687699187707,
+      "mae_observed_temperature": 945.3921220379137,
+      "baseline_mae": 2532.115416585175,
+      "improvement_over_baseline": 0.5635894857809867
+    }
+  ],
+  "mae_mean": 1018.8380556484124,
+  "mae_std": 61.57336957717924,
+  "mape_mean": 3.186086552291685,
+  "mape_std": 0.17492030984360932,
+  "improvement_over_baseline_min": 0.5120262172352147,
+  "improvement_over_baseline_mean": 0.5484484009543321
+}

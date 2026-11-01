@@ -1,0 +1,17 @@
+[project]
+name = "electricity-demand-forecasting"
+version = "2.0.0"
+description = "Direct multi-horizon hourly electricity demand forecasting with an MLflow-managed model and a FastAPI service."
+requires-python = ">=3.14"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = [
+    "integration: requires the trained model in models/ (run `python -m src.train`)",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore:Using `httpx` with `starlette.testclient`",
+    "ignore:Hint. Inferred schema contains integer column",
+]

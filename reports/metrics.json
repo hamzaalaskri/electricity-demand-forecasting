@@ -1,0 +1,270 @@
+{
+  "data_quality": {
+    "raw_rows": 145366,
+    "duplicate_timestamps": 4,
+    "filled_hours": 30,
+    "final_rows": 145392,
+    "start": "2002-01-01 01:00:00",
+    "end": "2018-08-03 00:00:00"
+  },
+  "partitions": {
+    "fit": {
+      "rows": 91103,
+      "start": "2002-01-31 01:00:00",
+      "end": "2012-06-22 23:00:00"
+    },
+    "early_stopping": {
+      "rows": 10102,
+      "start": "2012-06-24 00:00:00",
+      "end": "2013-08-18 21:00:00"
+    },
+    "validation": {
+      "rows": 21673,
+      "start": "2013-08-19 22:00:00",
+      "end": "2016-02-08 22:00:00"
+    },
+    "test": {
+      "rows": 21698,
+      "start": "2016-02-09 23:00:00",
+      "end": "2018-08-02 00:00:00"
+    }
+  },
+  "features": {
+    "origin": [
+      "PJME_MW",
+      "lag_1",
+      "lag_24",
+      "lag_48",
+      "lag_168",
+      "lag_720",
+      "hour",
+      "day_of_week",
+      "month",
+      "is_weekend",
+      "is_holiday",
+      "is_holiday_tomorrow",
+      "hour_sin",
+      "hour_cos",
+      "rolling_mean_24",
+      "rolling_mean_168",
+      "rolling_mean_720",
+      "temperature",
+      "temperature_mean_24"
+    ],
+    "per_horizon": [
+      "PJME_MW",
+      "lag_1",
+      "lag_24",
+      "lag_48",
+      "lag_168",
+      "lag_720",
+      "hour",
+      "day_of_week",
+      "month",
+      "is_weekend",
+      "is_holiday",
+      "is_holiday_tomorrow",
+      "hour_sin",
+      "hour_cos",
+      "rolling_mean_24",
+      "rolling_mean_168",
+      "rolling_mean_720",
+      "temperature",
+      "temperature_mean_24",
+      "temperature_target"
+    ]
+  },
+  "candidates": [
+    "LightGBM",
+    "XGBoost"
+  ],
+  "params": {
+    "LightGBM": {
+      "objective": "regression",
+      "n_estimators": 5000,
+      "learning_rate": 0.028084335154750686,
+      "num_leaves": 44,
+      "max_depth": -1,
+      "min_child_samples": 30,
+      "subsample": 0.6943531336536197,
+      "subsample_freq": 1,
+      "colsample_bytree": 0.9301991904424537,
+      "reg_alpha": 0.0018550265803157552,
+      "reg_lambda": 0.012465180787301786,
+      "random_state": 42,
+      "n_jobs": -1,
+      "verbose": -1
+    },
+    "XGBoost": {
+      "objective": "reg:squarederror",
+      "n_estimators": 5000,
+      "learning_rate": 0.02098373882817468,
+      "max_depth": 7,
+      "subsample": 0.6453250038864868,
+      "colsample_bytree": 0.967745625139386,
+      "tree_method": "hist",
+      "random_state": 42,
+      "n_jobs": -1,
+      "min_child_weight": 1.2616409539906484,
+      "reg_alpha": 0.0063393505762583706,
+      "reg_lambda": 0.6318798756828683
+    }
+  },
+  "params_source": "tuned",
+  "selected_model": "LightGBM",
+  "trees_per_horizon": {
+    "1": 2960,
+    "2": 3939,
+    "3": 4313,
+    "4": 3239,
+    "5": 4109,
+    "6": 2711,
+    "7": 3146,
+    "8": 3130,
+    "9": 2932,
+    "10": 2962,
+    "11": 2615,
+    "12": 2744,
+    "13": 2045,
+    "14": 2224,
+    "15": 2105,
+    "16": 2005,
+    "17": 1813,
+    "18": 1885,
+    "19": 1134,
+    "20": 1563,
+    "21": 1570,
+    "22": 1107,
+    "23": 801,
+    "24": 1333
+  },
+  "validation": {
+    "LightGBM": {
+      "mean_mae": 834.8213627602845,
+      "mean_rmse": 1095.689257604604,
+      "mean_mape": 2.6241814430010204,
+      "mae_h1": 216.62356507865172,
+      "mae_h24": 918.3870854648778
+    },
+    "XGBoost": {
+      "mean_mae": 840.1883951635172,
+      "mean_rmse": 1102.943284739738,
+      "mean_mape": 2.640999091304384,
+      "mae_h1": 212.8437460348129,
+      "mae_h24": 921.3931847986262
+    },
+    "Naive": {
+      "mean_mae": 4606.556854534829,
+      "mean_rmse": 5780.227795641622,
+      "mean_mape": 15.047311606103143,
+      "mae_h1": 1063.9040741936972,
+      "mae_h24": 2239.4475153416693
+    },
+    "Seasonal naive (24h)": {
+      "mean_mae": 2241.364806825697,
+      "mean_rmse": 3061.80755124042,
+      "mean_mape": 7.004660992619567,
+      "mae_h1": 2242.12342546025,
+      "mae_h24": 2239.4475153416693
+    },
+    "Seasonal naive (168h)": {
+      "mean_mae": 3158.781498485058,
+      "mean_rmse": 4276.621257692149,
+      "mean_mape": 9.763523504377359,
+      "mae_h1": 3159.236146357219,
+      "mae_h24": 3159.5461634291514
+    }
+  },
+  "test": {
+    "LightGBM": {
+      "mean_mae": 1001.127062880712,
+      "mean_rmse": 1356.7435817718679,
+      "mean_mape": 3.138887181234677,
+      "mae_h1": 221.25512494745746,
+      "mae_h24": 1323.9102527190978
+    },
+    "Naive": {
+      "mean_mae": 4613.396117537714,
+      "mean_rmse": 5861.229247105154,
+      "mean_mape": 15.057438405993471,
+      "mae_h1": 1054.483961655452,
+      "mae_h24": 2208.7441699695823
+    },
+    "Seasonal naive (24h)": {
+      "mean_mae": 2208.212855639537,
+      "mean_rmse": 3030.858048096416,
+      "mean_mape": 7.021042544031514,
+      "mae_h1": 2207.9037699327127,
+      "mae_h24": 2208.7441699695823
+    },
+    "Seasonal naive (168h)": {
+      "mean_mae": 3437.994911205334,
+      "mean_rmse": 4741.316758905396,
+      "mean_mape": 10.711468143993462,
+      "mae_h1": 3438.4059821181677,
+      "mae_h24": 3436.9178726149876
+    }
+  },
+  "test_temperature_scenarios": {
+    "with forecast error": {
+      "mean_mae": 1001.127062880712,
+      "mean_rmse": 1356.7435817718679,
+      "mean_mape": 3.138887181234677,
+      "mae_h1": 221.25512494745746,
+      "mae_h24": 1323.9102527190978
+    },
+    "observed temperature": {
+      "mean_mae": 813.570824022204,
+      "mean_rmse": 1085.1092707465048,
+      "mean_mape": 2.570123500942634,
+      "mae_h1": 215.67813430657466,
+      "mae_h24": 911.940648720724
+    }
+  },
+  "test_best_baseline": "Seasonal naive (24h)",
+  "test_improvement_over_best_baseline": 0.5466347094556843,
+  "test_error_analysis": {
+    "mae_by_hour_of_day": {
+      "0": 812.42,
+      "1": 772.27,
+      "2": 729.84,
+      "3": 694.75,
+      "4": 683.88,
+      "5": 699.01,
+      "6": 713.45,
+      "7": 779.26,
+      "8": 851.17,
+      "9": 901.26,
+      "10": 1022.15,
+      "11": 1148.1,
+      "12": 1217.3,
+      "13": 1272.2,
+      "14": 1278.7,
+      "15": 1275.02,
+      "16": 1251.51,
+      "17": 1254.39,
+      "18": 1274.91,
+      "19": 1244.28,
+      "20": 1150.55,
+      "21": 1063.2,
+      "22": 1019.32,
+      "23": 918.1
+    },
+    "worst_hour_of_day": 14,
+    "best_hour_of_day": 4,
+    "mae_high_demand": 1241.849797217972,
+    "mae_low_demand": 760.383988251341,
+    "peak_threshold_mw": 40154.0,
+    "peak_mae": 1675.0643299978146,
+    "peak_mean_bias_mw": 461.1672461793903,
+    "peak_underprediction_share": 0.6010362694300518,
+    "p95_abs_error": 2964.166432214669
+  },
+  "trained_through": "2016-02-08 22:00:00",
+  "mlflow": {
+    "parent_run_id": "59c85420a25e4f7990298e1f55d90934",
+    "final_run_id": "c2c826b339f8438c8ff7b9e3cfe7c69f",
+    "registered_model": "ElectricityDemandForecaster",
+    "registered_version": "1"
+  }
+}

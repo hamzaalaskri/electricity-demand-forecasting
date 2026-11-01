@@ -1,0 +1,20 @@
+# Environments
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# MLflow tracking store and artifacts (reproducible with `python -m src.train`)
+mlflow.db
+mlartifacts/
+mlruns/
+notebooks/mlflow.db
+notebooks/mlruns/
+
+# Exported model (reproducible with `python -m src.train`)
+models/
+
+# Run logs
+reports/*.log

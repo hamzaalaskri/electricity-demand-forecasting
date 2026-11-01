@@ -1,0 +1,11 @@
+# Allow-list: exclude everything, then re-include what the image needs.
+*
+!requirements.txt
+!src/
+!api/
+!models/
+!data/PJME_hourly.csv
+!data/weather_hourly.csv
+
+**/__pycache__
+**/*.pyc
